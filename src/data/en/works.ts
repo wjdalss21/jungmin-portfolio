@@ -192,7 +192,7 @@ export const WORKS_EN: Work[] = [
     period: '2025 - 2026',
     team: 'Stellar&',
     role: 'Content planning, trend research',
-    award: '100K+ views',
+    award: 'Top video 143K views',
     tags: ['Seedance 2.5', 'Short-form', 'Trend research'],
     cover: { tone: 'paper' },
     featured: true,
@@ -215,7 +215,7 @@ export const WORKS_EN: Work[] = [
         },
       ],
       results: [
-        'A Byeolsu video passed 100,000 views',
+        'A single Byeolsu video peaked at 143K views',
         'High views but low follower conversion showed that reactions depend on matching viewer taste, not on whether content is AI-made',
       ],
       retrospective: [

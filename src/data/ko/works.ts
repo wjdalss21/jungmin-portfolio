@@ -193,7 +193,7 @@ export const WORKS_KO: Work[] = [
     period: '2025 - 2026',
     team: '스텔라앤',
     role: '콘텐츠 기획, 트렌드 리서치',
-    award: '조회수 100K+',
+    award: '최고 14.3만 조회',
     tags: ['Seedance 2.5', '숏폼', '트렌드 리서치'],
     cover: { tone: 'paper' },
     featured: true,
@@ -218,7 +218,7 @@ export const WORKS_KO: Work[] = [
         },
       ],
       results: [
-        '별수 콘텐츠 중 조회수 10만을 넘긴 영상 확보',
+        '별수 단일 영상 최고 14.3만 조회 기록',
         '높은 조회수에 비해 낮은 팔로워 전환을 확인하고, 반응의 갈림은 AI 여부보다 시청자 취향과의 접점에서 결정된다는 인사이트 도출',
       ],
       retrospective: [
