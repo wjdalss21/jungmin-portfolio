@@ -48,11 +48,11 @@ export default function WhyRotator({ index, onIndexChange }: WhyRotatorProps) {
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <div className="relative min-h-[6rem] md:min-h-[5rem]" aria-live="polite">
+      <div className="relative min-h-[5.25rem] md:min-h-[5rem]" aria-live="polite">
         <AnimatePresence mode="wait">
           <motion.div key={current.question} exit={{ opacity: 0, y: -10, transition: { duration: 0.25 } }}>
             <Link to={current.href} className="group block cursor-pointer">
-              <p className="text-xl font-semibold leading-snug text-ink md:text-2xl">
+              <p className="text-lg font-semibold leading-snug text-ink sm:text-xl md:text-2xl">
                 {current.question.split(' ').map((word, i) => (
                   <Fragment key={`${word}-${i}`}>
                     {i > 0 && ' '}
@@ -81,7 +81,8 @@ export default function WhyRotator({ index, onIndexChange }: WhyRotatorProps) {
         </AnimatePresence>
       </div>
 
-      <div className="mt-4 flex gap-1" role="group" aria-label={t.hero.pickerAria}>
+      {/* 막대는 작지만 누르는 영역은 44px 확보, 음수 여백으로 레이아웃 높이는 유지 */}
+      <div className="-mb-1.5 -ml-2.5 mt-1 flex" role="group" aria-label={t.hero.pickerAria}>
         {questions.map((q, i) => (
           <button
             key={q.href}
@@ -89,7 +90,7 @@ export default function WhyRotator({ index, onIndexChange }: WhyRotatorProps) {
             aria-pressed={i === index}
             aria-label={t.hero.pickAria(i + 1)}
             onClick={() => onIndexChange(i)}
-            className="group flex h-8 cursor-pointer items-center px-1"
+            className="group flex h-11 min-w-[44px] cursor-pointer items-center justify-center px-1"
           >
             <span
               className={`block h-1.5 rounded-full transition-[width,background-color] duration-300 ${

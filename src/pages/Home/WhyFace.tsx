@@ -91,7 +91,7 @@ export default function WhyFace({ reactKey, scrollProgress }: WhyFaceProps) {
       ref={scope}
       aria-hidden="true"
       style={reduce ? undefined : { y, opacity }}
-      className="font-display text-[6.5rem] font-semibold leading-[0.9] tracking-[-0.03em] text-ink sm:text-[9rem] lg:text-[11.5rem]"
+      className="font-display text-[5.75rem] font-semibold leading-[0.9] tracking-[-0.03em] text-ink sm:text-[9rem] lg:text-[11.5rem]"
     >
       {LETTERS.map((letter, i) => (
         <span key={letter} className="relative inline-block overflow-hidden pb-[0.14em] -mb-[0.14em] pt-[0.3em] -mt-[0.3em]">

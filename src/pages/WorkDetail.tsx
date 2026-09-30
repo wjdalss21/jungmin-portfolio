@@ -39,7 +39,7 @@ import NotFound from './NotFound'
 
 function Block({ title, icon: IconCmp, children }: { title: string; icon: Icon; children: ReactNode }) {
   return (
-    <Reveal className="grid gap-4 border-t border-line/10 py-12 md:grid-cols-12 md:gap-8">
+    <Reveal className="grid gap-4 border-t border-line/10 py-10 md:grid-cols-12 md:gap-8 md:py-12">
       <h2 className="flex items-center gap-3 self-start text-lg font-bold tracking-tight text-ink md:col-span-3">
         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-mint/25 text-accent-ink">
           <IconCmp size={20} weight="duotone" aria-hidden="true" />
@@ -171,7 +171,7 @@ export default function WorkDetail() {
         <Block title={d.approachTitle ?? t.detail.approach} icon={Path}>
           <ol className="grid gap-6 sm:grid-cols-2">
             {d.approach.map((a, i) => (
-              <li key={a.title} className="rounded-card bg-surface p-6 ring-1 ring-inset ring-line/10">
+              <li key={a.title} className="rounded-card bg-surface p-5 ring-1 ring-inset ring-line/10 md:p-6">
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-navy font-display text-sm font-semibold text-on-navy">
                   {i + 1}
                 </span>
@@ -253,7 +253,7 @@ export default function WorkDetail() {
                     height={stacked ? 1000 : 1200}
                     className={
                       stacked
-                        ? 'h-auto w-full rounded-card bg-surface p-4 ring-1 ring-line/10'
+                        ? 'h-auto w-full rounded-card bg-surface p-2 ring-1 ring-line/10 md:p-4'
                         : 'aspect-[4/3] w-full rounded-card bg-surface object-cover object-top ring-1 ring-line/10'
                     }
                   />
@@ -268,7 +268,7 @@ export default function WorkDetail() {
           <Block title={t.detail.troubleshooting} icon={Wrench}>
             <div className="space-y-6">
               {d.troubleshooting.map((ts) => (
-                <section key={ts.title} className="rounded-card bg-surface p-6 ring-1 ring-inset ring-line/10 md:p-8">
+                <section key={ts.title} className="rounded-card bg-surface p-4 ring-1 ring-inset ring-line/10 sm:p-6 md:p-8">
                   <h3 className="font-bold leading-snug text-ink">{ts.title}</h3>
                   <ol className="mt-5 grid gap-4 md:grid-cols-3">
                     {(

@@ -46,7 +46,7 @@ export default function Navbar() {
           <LanguageToggle />
           <button
             type="button"
-            className="-mr-2 p-2.5 text-ink"
+            className="-mr-3 p-3 text-ink"
             aria-label={open ? t.menuClose : t.menuOpen}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
