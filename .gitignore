@@ -6,3 +6,4 @@ _legacy
 .env.*
 *.log
 *.tsbuildinfo
+.vite
