@@ -135,3 +135,61 @@
     scroll-behavior: auto;
   }
 }
+
+/* ===== PDF 인쇄용 =====
+   A4 비율(1:1.414)을 유지하되 폭을 1120px로 잡아 데스크톱 레이아웃(lg)으로 인쇄 */
+@page {
+  size: 1120px 1584px;
+  margin: 48px 0;
+}
+
+@media print {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* 스크롤 진입 애니메이션이 남긴 인라인 스타일을 최종 상태로 고정 */
+  [style*='opacity'] {
+    opacity: 1 !important;
+  }
+
+  [style*='transform'] {
+    transform: none !important;
+  }
+
+  .skip-link {
+    display: none !important;
+  }
+
+  /* 카드, 이미지, 표가 페이지 경계에서 잘리지 않도록 */
+  figure,
+  li,
+  dl,
+  img,
+  section.rounded-card {
+    break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  /* 표지 Hero는 한 페이지 높이로 */
+  .print-doc > section:first-child {
+    min-height: 1380px;
+  }
+}

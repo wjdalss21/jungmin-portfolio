@@ -17,7 +17,7 @@ export default function Navbar() {
   ]
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line/10 bg-bg/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-line/10 bg-bg/85 backdrop-blur-md print:hidden">
       <nav className="container-page flex h-16 items-center justify-between" aria-label={t.nav.aria}>
         <Link to="/" className="text-base font-bold tracking-tight text-ink" onClick={close}>
           {profile.name}
