@@ -97,7 +97,16 @@
   }
 
   .section {
-    @apply py-24 md:py-32;
+    @apply py-20 md:py-32;
+  }
+
+  /* 가로 스크롤 영역의 스크롤바 숨김 (스와이프는 유지) */
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 
   .section-title {

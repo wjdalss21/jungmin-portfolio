@@ -32,7 +32,7 @@ function PublicationRow({ pub }: { pub: PublicationEntry }) {
             href={pub.url}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1 text-sm font-semibold text-accent-ink hover:underline"
+            className="-my-3 inline-flex min-h-[44px] items-center gap-1 text-sm font-semibold text-accent-ink hover:underline"
           >
             {t.research.original}
             <ArrowSquareOut size={14} aria-hidden="true" />

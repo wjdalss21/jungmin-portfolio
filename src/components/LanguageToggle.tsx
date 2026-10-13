@@ -18,7 +18,7 @@ export default function LanguageToggle() {
             type="button"
             aria-pressed={active}
             onClick={() => setLang(option)}
-            className={`relative min-h-[36px] min-w-[44px] cursor-pointer rounded-full px-3 font-display text-xs font-semibold uppercase tracking-wide transition-colors ${
+            className={`relative min-h-[40px] min-w-[44px] cursor-pointer rounded-full px-3 font-display text-[13px] md:min-h-[36px] md:text-xs font-semibold uppercase tracking-wide transition-colors ${
               active ? 'text-on-navy' : 'text-muted hover:text-ink'
             }`}
           >

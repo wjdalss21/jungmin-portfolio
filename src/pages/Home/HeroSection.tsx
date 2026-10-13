@@ -27,11 +27,11 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="container-page grid min-h-[calc(100dvh-10rem)] content-center gap-12 py-16 md:py-20 lg:grid-cols-12 lg:items-end lg:gap-8"
+      className="container-page grid min-h-[calc(100dvh-10rem)] content-center gap-7 py-8 sm:gap-12 sm:py-16 md:py-20 lg:grid-cols-12 lg:items-end lg:gap-8"
     >
       <div className="lg:col-span-7">
         <WhyFace reactKey={questionIndex} scrollProgress={scrollYProgress} />
-        <motion.div {...enter(0.6)} className="mt-8 max-w-xl">
+        <motion.div {...enter(0.6)} className="mt-5 max-w-xl sm:mt-8">
           <WhyRotator index={questionIndex} onIndexChange={setQuestionIndex} />
         </motion.div>
       </div>
@@ -40,7 +40,7 @@ export default function HeroSection() {
       <div key={lang} className="lg:col-span-5 lg:pb-3">
         <motion.h1
           {...enter(0.7)}
-          className="text-3xl font-bold leading-[1.3] tracking-tight text-ink md:text-4xl"
+          className="text-[1.75rem] font-bold leading-[1.3] tracking-tight text-ink sm:text-3xl md:text-4xl"
         >
           {profile.headline.map((line) => (
             <span key={line} className="block">
@@ -48,10 +48,10 @@ export default function HeroSection() {
             </span>
           ))}
         </motion.h1>
-        <motion.p {...enter(0.8)} className="mt-5 max-w-[36ch] text-lg leading-relaxed">
+        <motion.p {...enter(0.8)} className="mt-3 max-w-[36ch] text-base leading-relaxed sm:mt-5 sm:text-lg">
           {profile.intro}
         </motion.p>
-        <motion.div {...enter(0.9)} className="mt-8 flex flex-wrap gap-3">
+        <motion.div {...enter(0.9)} className="mt-6 flex flex-wrap gap-3 sm:mt-8">
           <Link to="/#projects" className="btn-primary group !py-2 !pr-2">
             {t.hero.cta}
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-on-navy/15 transition-transform duration-300 group-hover:-translate-y-px group-hover:translate-x-0.5 group-hover:scale-105">

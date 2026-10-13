@@ -56,7 +56,7 @@ function FeaturedCard({ work }: { work: Work }) {
   const { t } = useLang()
   const body = (
     <>
-      <WorkCover work={work} size="lg" className="h-64 w-full md:h-80 lg:h-[22rem]" />
+      <WorkCover work={work} size="lg" className="h-52 w-full sm:h-64 md:h-80 lg:h-[22rem]" />
       <div className="mt-5 flex items-start justify-between gap-4">
         <div>
           <WorkMeta work={work} />
@@ -115,7 +115,7 @@ export default function ProjectsSection() {
           <p className="mt-4 max-w-[60ch] text-lg">{t.projects.intro}</p>
         </Reveal>
 
-        <div className="mt-14 grid gap-x-8 gap-y-16 lg:grid-cols-12">
+        <div className="mt-10 grid gap-x-8 gap-y-12 md:mt-14 md:gap-y-16 lg:grid-cols-12">
           {featured.map((work, i) => (
             <Reveal key={work.slug} delay={(i % 2) * 0.08} className={FEATURED_LAYOUT[i] ?? 'lg:col-span-6'}>
               <FeaturedCard work={work} />
@@ -123,11 +123,15 @@ export default function ProjectsSection() {
           ))}
         </div>
 
-        <Reveal className="mt-24">
+        <Reveal className="mt-20 md:mt-24">
           <Tabs defaultValue="all">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <h3 className="text-xl font-bold tracking-tight text-ink">{t.projects.more}</h3>
-              <TabsList aria-label={t.projects.more}>
+              {/* 모바일은 한 줄 가로 스크롤, 데스크톱은 기본 배치 */}
+              <TabsList
+                aria-label={t.projects.more}
+                className="no-scrollbar -mx-4 w-[calc(100%+2rem)] flex-nowrap justify-start overflow-x-auto rounded-none bg-transparent px-4 ring-0 md:mx-0 md:w-auto md:rounded-full md:bg-surface md:px-1 md:ring-1"
+              >
                 {FILTERS.map(({ key, icon: FilterIcon }) => (
                   <TabsTrigger key={key} value={key}>
                     <FilterIcon size={16} weight="duotone" aria-hidden="true" />
@@ -140,9 +144,10 @@ export default function ProjectsSection() {
               const list = key === 'all' ? more : more.filter((w) => w.category === key)
               return (
                 <TabsContent key={key} value={key}>
-                  <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                  {/* 모바일은 옆으로 넘겨 보는 카드 행, 태블릿부터 그리드 */}
+                  <ul className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
                     {list.map((work) => (
-                      <li key={work.slug}>
+                      <li key={work.slug} className="w-[82%] shrink-0 snap-start md:w-auto">
                         <MoreCard work={work} />
                       </li>
                     ))}
