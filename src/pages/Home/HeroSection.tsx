@@ -31,9 +31,18 @@ export default function HeroSection() {
     >
       <div className="lg:col-span-7">
         <WhyFace reactKey={questionIndex} scrollProgress={scrollYProgress} />
-        <motion.div {...enter(0.6)} className="mt-5 max-w-xl sm:mt-8">
+        <motion.div {...enter(0.6)} className="mt-5 max-w-xl sm:mt-8 print:hidden">
           <WhyRotator index={questionIndex} onIndexChange={setQuestionIndex} />
         </motion.div>
+        {/* 인쇄본에는 순환 대신 질문 3개를 모두 나열 */}
+        <ul className="mt-8 hidden space-y-3 print:block">
+          {profile.whyQuestions.map((q) => (
+            <li key={q.href} className="text-xl font-semibold leading-snug text-ink">
+              {q.question}
+              <span className="ml-2 text-sm font-semibold text-accent-ink">{t.hero.answer(q.project)}</span>
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* 언어 전환 시 헤드라인 블록이 다시 들어오도록 key 지정 */}

@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import WorkDetail from './pages/WorkDetail'
 import NotFound from './pages/NotFound'
+import PrintPage from './pages/PrintPage'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollManager from './components/ScrollManager'
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects/:slug" element={<WorkDetail />} />
           <Route path="/research/:slug" element={<WorkDetail />} />
+          <Route path="/print" element={<PrintPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

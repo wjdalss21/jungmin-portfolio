@@ -21,9 +21,13 @@ export default function RollingNumber({ value, delay = 0 }: RollingNumberProps) 
   return (
     <span className="relative inline-block h-[1em] overflow-hidden align-top leading-none">
       <span className="sr-only">{value}</span>
+      {/* 인쇄 시에는 애니메이션 없이 최종 값만 표시 */}
+      <span aria-hidden="true" className="hidden print:block">
+        {value}
+      </span>
       <motion.span
         aria-hidden="true"
-        className="flex flex-col"
+        className="flex flex-col print:hidden"
         initial={{ y: 0 }}
         whileInView={{ y: `-${stop}em` }}
         viewport={{ once: true, amount: 0.6 }}
