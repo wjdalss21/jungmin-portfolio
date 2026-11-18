@@ -91,7 +91,7 @@ export default function WhyFace({ reactKey, scrollProgress }: WhyFaceProps) {
       ref={scope}
       aria-hidden="true"
       style={reduce ? undefined : { y, opacity }}
-      className="font-display text-[5.75rem] font-semibold leading-[0.9] tracking-[-0.03em] text-ink sm:text-[9rem] lg:text-[11.5rem]"
+      className="font-display text-[5.75rem] font-semibold leading-[0.9] tracking-[-0.03em] text-[#118AB2] sm:text-[9rem] lg:text-[11.5rem]"
     >
       {LETTERS.map((letter, i) => (
         <span key={letter} className="relative inline-block overflow-hidden pb-[0.14em] -mb-[0.14em] pt-[0.3em] -mt-[0.3em]">
@@ -124,7 +124,7 @@ export default function WhyFace({ reactKey, scrollProgress }: WhyFaceProps) {
         </span>
       ))}
       <motion.span
-        className="why-mark inline-block origin-bottom text-accent"
+        className="why-mark inline-block origin-bottom text-[#464B71] dark:text-[#7CD5C7]"
         initial={reduce ? false : { y: '-70%', rotate: -30, opacity: 0 }}
         animate={{ y: 0, rotate: 0, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 260, damping: 14, delay: 0.45 }}
