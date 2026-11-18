@@ -19,10 +19,10 @@ export const PROFILE_EN: ProfileContent = {
     { label: 'Award', value: 'Grand Prize, IN-Fit' },
     { label: 'Certified', value: 'SQLD, ADsP' },
   ],
-  aboutTitle: ['A planner who starts', 'with “why build this?”'],
+  aboutTitle: ['I start by understanding', '“why build this?”'],
   aboutParagraphs: [
-    'The moment I made my first video with HeyGen on an AI human project, I became convinced that generative AI could change how content is made.',
-    'At Stellar&, I joined feature development for a platform that adapts web novels into AI video, moving between service planning, data analysis, and content experiments. Along the way I trained myself to define “why we should build this” before anything else.',
+    'Whatever project or task I take on, I first try to understand why it needs to be done and how the whole flow fits together. Then I ask where I can contribute within that flow before I start moving.',
+    'The moment I made my first video with HeyGen on an AI human project, I became convinced that generative AI could change how content is made. At Stellar&, I joined feature development for a platform that adapts web novels into AI video, moving between service planning, data analysis, and content experiments.',
   ],
   metrics: [
     { value: '4', label: 'Projects planned' },
